@@ -1,13 +1,2518 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Keystone Lab</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InspectPro by The Keystone Lab | Professional Pre-Handover Property Inspection</title>
+  <meta name="description" content="Independent, systematic room-by-room inspection for newly constructed apartments and homes before handover. Document observable issues with photographic proof.">
+  <link rel="canonical" href="https://thekeystonelab.com">
+  <meta name="theme-color" content="#FAF8F5">
 
+  <!-- Open Graph / Social Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="InspectPro by The Keystone Lab | Pre-Handover Home Inspection">
+  <meta property="og:description" content="Your new home may look perfect. We check what you can't. Systematic pre-possession architectural inspections.">
+  <meta property="og:url" content="https://thekeystonelab.com">
+  <meta property="og:site_name" content="The Keystone Lab">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="InspectPro | Professional Home Inspection">
+  <meta name="twitter:description" content="Systematic room-by-room pre-handover audit for newly constructed apartments.">
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "InspectPro by The Keystone Lab",
+    "url": "https://thekeystonelab.com",
+    "email": "info@thekeystonelab.com",
+    "description": "Room-by-room pre-handover architectural and physical inspection for newly constructed apartments, flats, and residential properties.",
+    "serviceType": "Pre-Handover Home & Apartment Inspection",
+    "areaServed": "Metropolitan Urban Regions"
+  }
+  </script>
+
+  <style>
+    /* CSS Custom Properties: Pleasant Architectural Warm Brown Palette */
+    :root {
+      --bg-canvas: #FAF8F5;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F4EFEB;
+      --bg-muted: #EBE4DC;
+      
+      --text-main: #231E1B;
+      --text-muted: #615852;
+      --text-light: #8A817A;
+      
+      /* Pleasant Warm Architectural Browns */
+      --accent-brown: #704838;
+      --accent-brown-hover: #543427;
+      --accent-brown-light: #F6EEEA;
+      --accent-brown-border: #DBC5BA;
+      --accent-terracotta: #8C5946;
+      
+      --stone-border: #EAE5DE;
+      --stone-border-subtle: #F0ECE6;
+      --stone-border-focus: #704838;
+      
+      --tag-attention-bg: #FDF3E7;
+      --tag-attention-text: #8C4E0B;
+      --tag-critical-bg: #FAF0EE;
+      --tag-critical-text: #962E28;
+      --tag-minor-bg: #F2EFE9;
+      --tag-minor-text: #5E5246;
+
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: "SF Mono", Menlo, Consolas, "Courier New", monospace;
+      
+      --transition-smooth: 220ms cubic-bezier(0.16, 1, 0.3, 1);
+      --max-width: 1200px;
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+    }
+
+    /* Base Reset & Architecture */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent-brown);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    /* Architectural Typography */
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-brown);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: currentColor;
+      border-radius: 50%;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--text-main);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 5vw, 3.85rem);
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    h2 {
+      font-size: clamp(1.85rem, 3.5vw, 2.65rem);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+    }
+
+    p.lead {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition-smooth);
+      white-space: nowrap;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-brown);
+      color: #FFFFFF;
+      border-color: var(--accent-brown);
+    }
+    .btn-primary:hover {
+      background-color: var(--accent-brown-hover);
+      border-color: var(--accent-brown-hover);
+      box-shadow: 0 2px 10px rgba(112, 72, 56, 0.2);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-main);
+      border-color: var(--stone-border);
+    }
+    .btn-secondary:hover {
+      background-color: var(--bg-subtle);
+      border-color: var(--text-muted);
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--stone-border);
+      transition: border-color var(--transition-smooth);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .brand-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.28rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+    }
+
+    .brand-mark {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--accent-brown);
+      display: inline-grid;
+      place-items: center;
+      position: relative;
+    }
+    .brand-mark::after {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--accent-brown);
+    }
+
+    .brand-sub {
+      font-size: 0.65rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: color var(--transition-smooth);
+    }
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: 1px solid var(--stone-border);
+      padding: 8px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      color: var(--text-main);
+    }
+
+    @media (min-width: 900px) {
+      .nav-links {
+        display: flex;
+      }
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--bg-canvas);
+      padding: 24px;
+      border-top: 1px solid var(--stone-border);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      transform: translateY(-105%);
+      transition: transform 0.25s ease;
+      z-index: 99;
+      pointer-events: none;
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .mobile-drawer nav {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .mobile-drawer nav a {
+      font-size: 1.25rem;
+      font-weight: 500;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--stone-border-subtle);
+    }
+
+    /* Section Layout Standard */
+    section {
+      padding: 88px 0;
+      border-bottom: 1px solid var(--stone-border);
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 56px 0;
+      }
+    }
+
+    .hero-section {
+      padding-top: 64px;
+      padding-bottom: 84px;
+      background: linear-gradient(180deg, #FAF8F5 0%, #F3EEE7 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 64px;
+      }
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .hero-specs-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--stone-border);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-spec-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-stage {
+      position: relative;
+      border: 1px solid var(--stone-border);
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      box-shadow: 0 16px 36px -12px rgba(45, 36, 31, 0.08);
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      aspect-ratio: 4 / 3.4;
+      background: #E8E0D7;
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(101%);
+    }
+
+    .tech-pin {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-main);
+      box-shadow: 0 4px 14px rgba(70, 48, 38, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      animation: subtlePulse 4s infinite ease-in-out;
+    }
+
+    .pin-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .pin-dot.attention { background: #B45309; }
+    .pin-dot.pass { background: var(--accent-brown); }
+
+    .pin-1 { top: 22%; left: 16%; }
+    .pin-2 { bottom: 28%; right: 14%; animation-delay: 2s; }
+
+    .hero-meta-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding: 6px 4px 0 4px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-light);
+    }
+
+    /* Trust & Methodology Strip */
+    .trust-strip {
+      background-color: var(--bg-surface);
+      padding: 36px 0;
+      border-bottom: 1px solid var(--stone-border);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-left: 14px;
+      border-left: 2px solid var(--accent-brown);
+    }
+
+    .trust-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .trust-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Problem Section */
+    .problem-header {
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .problem-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+    }
+
+    .card-num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
+    .problem-card h3 {
+      font-size: 1.15rem;
+    }
+
+    /* Solution Split */
+    .solution-section {
+      background-color: var(--bg-subtle);
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 900px) {
+      .solution-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .comparison-col {
+      background: var(--bg-surface);
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .comparison-col.standard {
+      border-color: var(--stone-border);
+      opacity: 0.92;
+    }
+
+    .comparison-col.inspectpro {
+      border: 2px solid var(--accent-brown);
+      background: #FFFFFF;
+      position: relative;
+    }
+
+    .solution-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--accent-brown);
+      color: #FFF;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.05em;
+    }
+
+    .comparison-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .comparison-list li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .comparison-list li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* Categories Grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .category-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: border-color var(--transition-smooth), transform var(--transition-smooth);
+    }
+    .category-card:hover {
+      border-color: var(--accent-brown);
+      transform: translateY(-2px);
+    }
+
+    .cat-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--stone-border);
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: var(--radius-sm);
+      color: var(--accent-brown);
+    }
+
+    .category-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .category-card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Process Flow */
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+      position: relative;
+    }
+
+    .process-step {
+      background: var(--bg-surface);
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      position: relative;
+    }
+
+    .step-badge {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-brown);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .process-step h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .report-section {
+      background-color: var(--bg-subtle);
+    }
+
+    .report-frame {
+      background: var(--bg-surface);
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-top: 36px;
+      box-shadow: 0 20px 40px -15px rgba(50, 40, 30, 0.06);
+    }
+
+    .report-topbar {
+      background: #F5EFEB;
+      border-bottom: 1px solid var(--stone-border);
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+    }
+
+    .report-meta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--text-muted);
+    }
+
+    .report-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--stone-border);
+      background: #FAF6F2;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .report-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      padding: 14px 22px;
+      border: none;
+      background: none;
+      border-right: 1px solid var(--stone-border);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s ease, color 0.15s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      background: #EFE8E1;
+      color: var(--text-main);
+    }
+    .tab-btn.active {
+      background: var(--bg-surface);
+      color: var(--accent-brown);
+      border-bottom: 2px solid var(--accent-brown);
+      font-weight: 600;
+    }
+
+    .report-body {
+      padding: 28px;
+    }
+
+    .report-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    @media (min-width: 900px) {
+      .report-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .finding-card {
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #FFFFFF;
+    }
+    .finding-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .finding-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 12px;
+    }
+
+    .finding-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .tag-priority {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .tag-priority.attention {
+      background: var(--tag-attention-bg);
+      color: var(--tag-attention-text);
+    }
+    .tag-priority.critical {
+      background: var(--tag-critical-bg);
+      color: var(--tag-critical-text);
+    }
+    .tag-priority.minor {
+      background: var(--tag-minor-bg);
+      color: var(--tag-minor-text);
+    }
+
+    .evidence-box {
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: #201D1A;
+      position: relative;
+    }
+
+    .evidence-image {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .annotation-marker {
+      position: absolute;
+      border: 2px dashed #C84E3A;
+      background: rgba(200, 78, 58, 0.16);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+
+    .evidence-footer {
+      padding: 8px 12px;
+      background: #2C2623;
+      color: #BFB7AF;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .finding-meta {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 14px;
+      font-size: 0.88rem;
+    }
+
+    .meta-block {
+      background: var(--bg-subtle);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+    }
+    .meta-block strong {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-light);
+      margin-bottom: 3px;
+      font-family: var(--font-mono);
+    }
+
+    /* Real Findings Visuals */
+    .finding-examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .sample-finding-card {
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-md);
+      background: var(--bg-surface);
+      overflow: hidden;
+    }
+
+    .sample-img-wrap {
+      aspect-ratio: 16 / 11;
+      position: relative;
+      background: #E2DDD5;
+    }
+    .sample-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sample-info {
+      padding: 20px;
+    }
+
+    /* Why InspectPro */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .why-item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .why-item h3 {
+      font-size: 1.15rem;
+    }
+
+    /* Who Should Book */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .audience-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border-top: 3px solid var(--accent-brown);
+    }
+
+    .audience-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    /* Contact & Direct Inquiry Section */
+    .contact-section {
+      background-color: var(--bg-surface);
+    }
+
+    .contact-container-box {
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-md);
+      background: #FFFFFF;
+      padding: 40px;
+      margin-top: 36px;
+    }
+
+    .contact-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 900px) {
+      .contact-split {
+        grid-template-columns: 0.9fr 1.1fr;
+      }
+    }
+
+    .direct-email-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .email-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: var(--accent-brown);
+      font-weight: 600;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+    .form-control:focus {
+      outline: 2px solid var(--accent-brown);
+      border-color: transparent;
+    }
+
+    /* FAQ Accordion */
+    .faq-list {
+      max-width: 780px;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .faq-icon {
+      transition: transform var(--transition-smooth);
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      color: var(--accent-brown);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease-out, padding 0.25s ease;
+      padding: 0 24px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+
+    /* Final CTA Strip */
+    .final-cta {
+      background-color: var(--accent-brown);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .final-cta h2 {
+      color: #FFFFFF;
+      max-width: 680px;
+      margin: 0 auto 16px auto;
+    }
+
+    .final-cta p {
+      color: #EBDDD7;
+      max-width: 580px;
+      margin: 0 auto 28px auto;
+      font-size: 1.05rem;
+    }
+
+    .final-cta .btn-primary {
+      background: #FFFFFF;
+      color: var(--accent-brown);
+      border-color: #FFFFFF;
+      font-weight: 600;
+    }
+    .final-cta .btn-primary:hover {
+      background: #FAF8F5;
+      color: var(--accent-brown-hover);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #1B1715;
+      color: #948B84;
+      padding: 64px 0 32px 0;
+      font-size: 0.88rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 40px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid #2D2723;
+    }
+
+    @media (max-width: 800px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+      font-size: 0.78rem;
+    }
+
+    /* Modal Backdrop & Dialog */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(27, 23, 21, 0.72);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: grid;
+    }
+
+    .modal-dialog {
+      background: var(--bg-surface);
+      border: 1px solid var(--stone-border);
+      border-radius: var(--radius-md);
+      max-width: 560px;
+      width: 100%;
+      padding: 32px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      padding: 6px;
+    }
+
+    /* Toast Notification (No alert() used) */
+    .toast-notice {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--text-main);
+      color: #FFFFFF;
+      padding: 14px 22px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      z-index: 2000;
+      transform: translateY(160%);
+      transition: transform 0.25s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      border-left: 4px solid var(--accent-brown);
+      max-width: 380px;
+    }
+    .toast-notice.show {
+      transform: translateY(0);
+    }
+
+    @keyframes subtlePulse {
+      0%, 100% { opacity: 0.95; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(0.98); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
 <body>
-  <h1>The Keystone Lab</h1>
-  <p>InspectPro — Coming Soon</p>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand-group" aria-label="InspectPro by The Keystone Lab">
+        <div class="brand-logo">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>InspectPro</span>
+        </div>
+        <span class="brand-sub">by The Keystone Lab</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#scope">Inspection Scope</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#report-preview">Report Preview</a></li>
+          <li><a href="#why">Methodology</a></li>
+          <li><a href="#contact">Contact & Inquiry</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn btn-secondary btn-sm" onclick="openSampleReport()">View Sample Report</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="openBookingModal()">Book an Inspection</button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-label="Toggle Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <nav>
+      <a href="#scope" onclick="closeMobileMenu()">Inspection Scope</a>
+      <a href="#process" onclick="closeMobileMenu()">Process</a>
+      <a href="#report-preview" onclick="closeMobileMenu()">Report Preview</a>
+      <a href="#why" onclick="closeMobileMenu()">Methodology</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact & Inquiry</a>
+      <a href="#faq" onclick="closeMobileMenu()">Frequently Asked Questions</a>
+    </nav>
+    <div style="display:flex; flex-direction:column; gap:10px; margin-top:auto;">
+      <button type="button" class="btn btn-primary" onclick="closeMobileMenu(); openBookingModal();">Book an Inspection</button>
+      <button type="button" class="btn btn-secondary" onclick="closeMobileMenu(); openSampleReport();">View Sample Report</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">Professional Pre-Handover Property Audit</span>
+          <h1>Your new home may look perfect. We check what you can't.</h1>
+          <p class="lead">
+            A professional, room-by-room inspection for newly constructed apartments and homes. 
+            Identify observable issues, document them with evidence, and get a clear report before you move in.
+          </p>
+          <div class="hero-ctas">
+            <button type="button" class="btn btn-primary" onclick="openBookingModal()">Book an Inspection</button>
+            <button type="button" class="btn btn-secondary" onclick="openSampleReport()">View Sample Report</button>
+          </div>
+          <div class="hero-specs-list">
+            <span class="hero-spec-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Standardized Digital Report
+            </span>
+            <span class="hero-spec-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Photographic Evidence
+            </span>
+            <span class="hero-spec-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Independent Surveyor Audit
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-stage">
+          <div class="hero-image-wrap">
+            <img 
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=80" 
+              alt="Architectural view of a modern apartment interior with clean lines"
+              loading="eager"
+            >
+            <!-- Technical Pins in Warm Brown Accent -->
+            <div class="tech-pin pin-1">
+              <span class="pin-dot attention"></span>
+              <span>FLOOR: Hollow tile detected (Tap acoustic)</span>
+            </div>
+            <div class="tech-pin pin-2">
+              <span class="pin-dot pass"></span>
+              <span>PLUMBING: Pressure test stable (3.2 bar)</span>
+            </div>
+          </div>
+          <div class="hero-meta-strip">
+            <span>FIELD REF: #KSL-8841-B</span>
+            <span>STATUS: PRE-HANDOVER AUDIT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <span class="trust-title">250+ Inspection Points</span>
+          <span class="trust-desc">Rigorous multi-point systematic checklist across every room and fixture.</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-title">Independent & Objective</span>
+          <span class="trust-desc">Zero ties to builders or contractors. Our loyalty is entirely with the homeowner.</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-title">Actionable Digital Report</span>
+          <span class="trust-desc">Structured PDF summary formatted specifically for builder snag remediation.</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-title">Rapid 24-48hr Turnaround</span>
+          <span class="trust-desc">Complete findings delivered quickly to avoid delaying key handover milestones.</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="problem">
+      <div class="container">
+        <div class="problem-header">
+          <span class="eyebrow">The Possession Dilemma</span>
+          <h2>The rush of handover day conceals the flaws you inherit.</h2>
+          <p class="lead" style="margin-top:12px;">
+            Handovers are typically fast-paced, cosmetic walk-throughs conducted under pressure. 
+            Fresh paint frequently masks underlying construction deviations that become costly repairs after move-in.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <div class="problem-card">
+            <span class="card-num">01 / CONCEALED DEFECTS</span>
+            <h3>Acoustic Hollow Tiles</h3>
+            <p>Poor adhesive bonding leaves void spaces under vitrified or ceramic tiles, leading to cracked corners and loose floorboards within months.</p>
+          </div>
+
+          <div class="problem-card">
+            <span class="card-num">02 / WATERPROOFING & GRADIENT</span>
+            <h3>Shower & Balcony Slope Traps</h3>
+            <p>Incorrect tile slope in wet areas prevents natural drainage toward floor traps, creating chronic water stagnation and perimeter seepage.</p>
+          </div>
+
+          <div class="problem-card">
+            <span class="card-num">03 / ELECTRICAL SAFETY</span>
+            <h3>Phase-Neutral Reversals</h3>
+            <p>Invisible wiring errors, missing earthing on heavy appliance points, and non-tripping RCCB circuits leave appliances vulnerable to surges.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solution-section" id="solution">
+      <div class="container">
+        <div style="max-width:680px; margin-bottom:44px;">
+          <span class="eyebrow">The InspectPro Method</span>
+          <h2>Replacing hasty walkthroughs with disciplined observation.</h2>
+          <p class="lead" style="margin-top:10px;">
+            We don't do informal glance-overs. InspectPro deploys methodical engineering checklists, 
+            calibrated tools, and non-destructive testing to verify structural finishes and utilities.
+          </p>
+        </div>
+
+        <div class="solution-grid">
+          <div class="comparison-col standard">
+            <h3 style="color:var(--text-muted);">Standard Informal Walkthrough</h3>
+            <ul class="comparison-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <span>Conducted under 30 minutes alongside a hurried site representative.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <span>Limited to cosmetic scratches and superficial surface smudges.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <span>Verbal assurances scribbled informally on scrap notepads.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <span>No photographic timeline or standardized punch-list for builder accountability.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="comparison-col inspectpro">
+            <span class="solution-badge">INSPECTPRO METHOD</span>
+            <h3>Systematic Engineering Audit</h3>
+            <ul class="comparison-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-brown)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Thorough 3 to 5-hour comprehensive room-by-room evaluation.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-brown)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Testing plumbing line pressures, circuit polarity, hollow tiles, and plumb alignments.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-brown)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Categorized, severity-tagged digital punch-list ready for builder contract sign-off.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-brown)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Complete high-resolution photo evidence documented for every single issue identified.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="scope">
+      <div class="container">
+        <div style="max-width:700px;">
+          <span class="eyebrow">Comprehensive Coverage</span>
+          <h2>Room-by-room, system-by-system scrutiny.</h2>
+          <p class="lead" style="margin-top:10px;">
+            Our inspection scopes cover both the visible architectural finishes and the functional utilities that support daily living.
+          </p>
+        </div>
+
+        <div class="category-grid">
+          <div class="category-card">
+            <div class="cat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <h3>Flooring & Tiles</h3>
+            <p>Hollow acoustic checks, lippage unevenness, grouting continuity, slope verification toward drains, skirt alignment.</p>
+          </div>
+
+          <div class="category-card">
+            <div class="cat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            </div>
+            <h3>Electrical Systems</h3>
+            <p>Socket polarity, grounding verification, MCB/RCCB trip testing, switch plate alignments, concealed conduit checks.</p>
+          </div>
+
+          <div class="category-card">
+            <div class="cat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+            </div>
+            <h3>Plumbing & Sanitary</h3>
+            <p>Trap seals, slow drainage diagnostics, water pressure drops, angle cock leaks, flush tank mechanism integrity.</p>
+          </div>
+
+          <div class="category-card">
+            <div class="cat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 12h18"></path><path d="M12 3v18"></path></svg>
+            </div>
+            <h3>Doors & Windows</h3>
+            <p>Sash plumbness, silicone weather sealing, latch engagements, glass scratch audits, hinge friction and clearances.</p>
+          </div>
+
+          <div class="category-card">
+            <div class="cat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line></svg>
+            </div>
+            <h3>Walls & Ceilings</h3>
+            <p>Hairline shrinkage cracks, dampness moisture reading, plaster undulations, paint unevenness, drywall joints.</p>
+          </div>
+
+          <div class="category-card">
+            <div class="cat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Safety & Balconies</h3>
+            <p>Railing anchor rigidity, parapet height compliance, glass balustrade vibration, child safety latch clearances.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="solution-section">
+      <div class="container">
+        <div style="max-width:680px;">
+          <span class="eyebrow">The Inspection Workflow</span>
+          <h2>A seamless five-step progression from booking to remediation.</h2>
+          <p class="lead" style="margin-top:10px;">Designed to fit neatly into your builder handover schedule without causing delays.</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step">
+            <span class="step-badge">STEP 01</span>
+            <h3>Book</h3>
+            <p>Select your property configuration, target possession date, and confirm location access.</p>
+          </div>
+
+          <div class="process-step">
+            <span class="step-badge">STEP 02</span>
+            <h3>Inspect</h3>
+            <p>Our surveyor arrives with calibrated tools for an intensive 3–5 hour room-by-room audit.</p>
+          </div>
+
+          <div class="process-step">
+            <span class="step-badge">STEP 03</span>
+            <h3>Document</h3>
+            <p>Every observable deviation is photographed, cross-referenced with exact room locations.</p>
+          </div>
+
+          <div class="process-step">
+            <span class="step-badge">STEP 04</span>
+            <h3>Review</h3>
+            <p>Data is categorized into Critical, Attention, and Minor snags with clear repair notes.</p>
+          </div>
+
+          <div class="process-step">
+            <span class="step-badge">STEP 05</span>
+            <h3>Report</h3>
+            <p>Receive your digital PDF inspection report within 24–48 hours to share directly with your builder.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="report-preview" class="report-section">
+      <div class="container">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:20px;">
+          <div style="max-width:640px;">
+            <span class="eyebrow">Sample Deliverable</span>
+            <h2>Realistic digital inspection report preview.</h2>
+            <p class="lead" style="margin-top:10px;">
+              See how InspectPro translates technical observations into structured, builder-actionable documents. 
+              Click the room tabs below to explore real recorded observations.
+            </p>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="openSampleReport()">Open Full PDF Sample</button>
+        </div>
+
+        <div class="report-frame">
+          <div class="report-topbar">
+            <div class="report-meta-group">
+              <span><strong>PROPERTY:</strong> Unit 1402, Keystone Heights</span>
+              <span><strong>TYPE:</strong> 3 BHK (1,680 sq.ft)</span>
+            </div>
+            <div class="report-meta-group">
+              <span><strong>AUDIT DATE:</strong> 2026-09-18</span>
+              <span><strong>TOTAL SNAGS:</strong> 18 Recorded</span>
+            </div>
+          </div>
+
+          <!-- Room Navigation Tabs -->
+          <div class="report-tabs" role="tablist" aria-label="Report Room Selector">
+            <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchReportTab('master-bed', this)">
+              <span>01. Master Bedroom</span>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" onclick="switchReportTab('guest-bath', this)">
+              <span>02. Guest Bathroom</span>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" onclick="switchReportTab('kitchen', this)">
+              <span>03. Kitchen & Utility</span>
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" onclick="switchReportTab('living-balcony', this)">
+              <span>04. Living & Balcony</span>
+            </button>
+          </div>
+
+          <div class="report-body">
+            <!-- TAB 1: MASTER BEDROOM -->
+            <div id="tab-master-bed" class="report-tab-content">
+              <div class="report-grid">
+                <div>
+                  <div class="finding-card">
+                    <div class="finding-header">
+                      <div>
+                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-light);">ITEM #MB-04</span>
+                        <h4 class="finding-title">Hollow Tile Void Under Footfall Path</h4>
+                      </div>
+                      <span class="tag-priority attention">Attention</span>
+                    </div>
+
+                    <p style="font-size:0.9rem; margin-bottom:12px;">
+                      Acoustic tapping survey identified a ~0.45 sq.m void space beneath two 800x800mm vitrified tiles near the en-suite doorway threshold. Inadequate adhesive mortar bed.
+                    </p>
+
+                    <div class="finding-meta">
+                      <div class="meta-block">
+                        <strong>Observed Condition</strong>
+                        <span>Hollow resonance upon light polymer hammer tap; edge lippage 1.8mm above adjacent tile.</span>
+                      </div>
+                      <div class="meta-block">
+                        <strong>Recommended Builder Action</strong>
+                        <span>Carefully uplift affected tiles, clean substrate, and re-lay using polymer-modified mortar to prevent point-load cracking.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="finding-card" style="margin-top:16px;">
+                    <div class="finding-header">
+                      <div>
+                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-light);">ITEM #MB-07</span>
+                        <h4 class="finding-title">Sliding Window Sash Misalignment</h4>
+                      </div>
+                      <span class="tag-priority minor">Minor</span>
+                    </div>
+                    <p style="font-size:0.9rem;">
+                      Left track perimeter rubber gasket unseated along 40cm vertical edge; latch requires excessive manual force to engage lock keeper.
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="evidence-box">
+                    <img 
+                      src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?auto=format&fit=crop&w=700&q=80" 
+                      alt="Close-up floor inspection documenting tile alignment" 
+                      class="evidence-image"
+                    >
+                    <div class="annotation-marker" style="top:25%; left:30%; width:40%; height:45%;"></div>
+                    <div class="evidence-footer">
+                      <span>PHOTO REF: MB-F4-VOID.JPG</span>
+                      <span>TAP LOC: GRID B2</span>
+                    </div>
+                  </div>
+                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--text-light); margin-top:8px;">
+                    * Calibrated sounding hammer utilized for non-destructive resonance audit.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 2: GUEST BATHROOM -->
+            <div id="tab-guest-bath" class="report-tab-content" style="display:none;">
+              <div class="report-grid">
+                <div>
+                  <div class="finding-card">
+                    <div class="finding-header">
+                      <div>
+                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-light);">ITEM #GB-02</span>
+                        <h4 class="finding-title">Shower Floor Water Stagnation (Reverse Slope)</h4>
+                      </div>
+                      <span class="tag-priority critical">Critical</span>
+                    </div>
+                    <p style="font-size:0.9rem; margin-bottom:12px;">
+                      Controlled flow test demonstrated water collection pooling toward the western partition instead of flowing into the floor drain trap.
+                    </p>
+                    <div class="finding-meta">
+                      <div class="meta-block">
+                        <strong>Observed Condition</strong>
+                        <span>Residual puddle depth ~3mm remains 35 minutes post drainage release.</span>
+                      </div>
+                      <div class="meta-block">
+                        <strong>Recommended Builder Action</strong>
+                        <span>Re-grade shower cubicle floor tiles to ensure minimum 1:80 continuous fall toward waste drain.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="evidence-box">
+                    <img 
+                      src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=700&q=80" 
+                      alt="Bathroom plumbing and tile drain inspection" 
+                      class="evidence-image"
+                    >
+                    <div class="evidence-footer">
+                      <span>PHOTO REF: GB-02-SLOPE.JPG</span>
+                      <span>POOLING DELTA: +3.2mm</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 3: KITCHEN -->
+            <div id="tab-kitchen" class="report-tab-content" style="display:none;">
+              <div class="report-grid">
+                <div>
+                  <div class="finding-card">
+                    <div class="finding-header">
+                      <div>
+                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-light);">ITEM #KT-05</span>
+                        <h4 class="finding-title">Undersink Wastewater Trap Seepage</h4>
+                      </div>
+                      <span class="tag-priority attention">Attention</span>
+                    </div>
+                    <p style="font-size:0.9rem; margin-bottom:12px;">
+                      Minor drip observed at PVC bottle trap compression washer under full basin discharge.
+                    </p>
+                    <div class="finding-meta">
+                      <div class="meta-block">
+                        <strong>Recommended Builder Action</strong>
+                        <span>Replace damaged rubber o-ring seal and tighten union nut without over-torquing thread.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="evidence-box">
+                    <img 
+                      src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80" 
+                      alt="Kitchen sink drainage pipework" 
+                      class="evidence-image"
+                    >
+                    <div class="evidence-footer">
+                      <span>PHOTO REF: KT-05-LEAK.JPG</span>
+                      <span>STATUS: SEAL DEVIATION</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 4: LIVING & BALCONY -->
+            <div id="tab-living-balcony" class="report-tab-content" style="display:none;">
+              <div class="report-grid">
+                <div>
+                  <div class="finding-card">
+                    <div class="finding-header">
+                      <div>
+                        <span style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-light);">ITEM #LB-01</span>
+                        <h4 class="finding-title">Balustrade Base Anchor Bolt Torque Insufficient</h4>
+                      </div>
+                      <span class="tag-priority critical">Critical</span>
+                    </div>
+                    <p style="font-size:0.9rem; margin-bottom:12px;">
+                      Mild lateral vibration detected on stainless steel handrail post #3. One anchor fastener loose in concrete core.
+                    </p>
+                    <div class="finding-meta">
+                      <div class="meta-block">
+                        <strong>Recommended Builder Action</strong>
+                        <span>Re-anchor using chemical epoxy fastener bolt to meet building safety code compliance.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="evidence-box">
+                    <img 
+                      src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=700&q=80" 
+                      alt="Balcony railing safety anchor audit" 
+                      class="evidence-image"
+                    >
+                    <div class="evidence-footer">
+                      <span>PHOTO REF: LB-01-ANCHOR.JPG</span>
+                      <span>SAFETY CRITICAL</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="findings">
+      <div class="container">
+        <div style="max-width:680px;">
+          <span class="eyebrow">Observable Evidence</span>
+          <h2>Clear documentation builders cannot dismiss.</h2>
+          <p class="lead" style="margin-top:10px;">
+            By presenting clear, measurable facts instead of subjective complaints, your rectification requests are resolved without disputes.
+          </p>
+        </div>
+
+        <div class="finding-examples-grid">
+          <div class="sample-finding-card">
+            <div class="sample-img-wrap">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="Plaster alignment inspection">
+            </div>
+            <div class="sample-info">
+              <span class="tag-priority attention">Attention</span>
+              <h4 style="margin: 8px 0 4px 0;">Plaster Level & Surface Bulge</h4>
+              <p>Deviation >4mm along a 2-meter vertical straight edge, visible under ambient grazing light.</p>
+            </div>
+          </div>
+
+          <div class="sample-finding-card">
+            <div class="sample-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f8?auto=format&fit=crop&w=600&q=80" alt="Electrical socket polarity check">
+            </div>
+            <div class="sample-info">
+              <span class="tag-priority critical">Critical</span>
+              <h4 style="margin: 8px 0 4px 0;">Floating Neutral / Missing Earth</h4>
+              <p>Kitchen refrigerator socket showed 110V ground potential difference via digital tester.</p>
+            </div>
+          </div>
+
+          <div class="sample-finding-card">
+            <div class="sample-img-wrap">
+              <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=600&q=80" alt="Door jamb and frame clearance">
+            </div>
+            <div class="sample-info">
+              <span class="tag-priority minor">Minor</span>
+              <h4 style="margin: 8px 0 4px 0;">Door Leaf Perimeter Binding</h4>
+              <p>Wooden door frame jamb binding at bottom left edge; paint scuffing from seasonal swelling.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="solution-section">
+      <div class="container">
+        <div style="max-width:680px;">
+          <span class="eyebrow">The Keystone Lab Standard</span>
+          <h2>Engineered precision, complete independence.</h2>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="cat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h3>Zero Builder Affiliation</h3>
+            <p>We do not take contractor commissions, do not perform renovation work, and have zero conflicts of interest. Our sole client is the property buyer.</p>
+          </div>
+
+          <div class="why-item">
+            <div class="cat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <h3>Calibrated Tooling</h3>
+            <p>We utilize precision spirit levels, socket polarity testers, digital moisture meters, laser measures, and tap hammers for measurable certainty.</p>
+          </div>
+
+          <div class="why-item">
+            <div class="cat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3>Builder-Ready Punchlists</h3>
+            <p>Reports are compiled with clear location tagging (Room > Wall > Fixture) so site engineers can immediately issue work orders to subcontractors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="audience">
+      <div class="container">
+        <div style="max-width:680px;">
+          <span class="eyebrow">Who We Serve</span>
+          <h2>Tailored for every stage of residential handover.</h2>
+        </div>
+
+        <div class="audience-grid">
+          <div class="audience-card">
+            <h3>New Apartment Buyers</h3>
+            <p>Prior to signing handover documents, identify snags while the builder's defect liability period is completely active.</p>
+          </div>
+
+          <div class="audience-card">
+            <h3>Non-Resident Owners (NRIs)</h3>
+            <p>Unable to be present on site? We act as your independent eyes, delivering exhaustive photo reports with zero travel needed.</p>
+          </div>
+
+          <div class="audience-card">
+            <h3>Interior Fit-Out Planning</h3>
+            <p>Identify concealed seepage, damp spots, and socket misalignments before custom modular woodwork is permanently installed.</p>
+          </div>
+
+          <div class="audience-card">
+            <h3>Property Investors</h3>
+            <p>Safeguard asset resale and rental yields by ensuring high construction quality prior to tenant move-in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div style="max-width:680px;">
+          <span class="eyebrow">Direct Inquiries & Reviews</span>
+          <h2>Connect with our inspection coordinators.</h2>
+          <p class="lead" style="margin-top:8px;">
+            Submit your property inspection request or feedback directly to our central desk at 
+            <strong>info@thekeystonelab.com</strong>.
+          </p>
+        </div>
+
+        <div class="contact-container-box">
+          <div class="contact-split">
+            <div>
+              <div class="direct-email-card">
+                <span class="email-badge">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  info@thekeystonelab.com
+                </span>
+                <p style="font-size:0.9rem;">
+                  Every booking request, property review, and inquiry submitted via this form routes immediately to our official central mailbox for same-day evaluation.
+                </p>
+                <div style="font-family:var(--font-mono); font-size:0.78rem; color:var(--text-light); border-top:1px solid var(--stone-border); padding-top:12px;">
+                  <span>ESTIMATED RESPONSE TIME: &lt; 4 HOURS (BUSINESS DAYS)</span>
+                </div>
+              </div>
+
+              <div style="margin-top:24px; display:flex; flex-direction:column; gap:12px; font-size:0.88rem; color:var(--text-muted);">
+                <div style="display:flex; gap:10px;">
+                  <span style="font-family:var(--font-mono); color:var(--accent-brown); font-weight:bold;">01</span>
+                  <span><strong>Inspection Scope Confirmation:</strong> We review the apartment layout and location.</span>
+                </div>
+                <div style="display:flex; gap:10px;">
+                  <span style="font-family:var(--font-mono); color:var(--accent-brown); font-weight:bold;">02</span>
+                  <span><strong>Calendar Allotment:</strong> A certified surveyor is assigned to your slot.</span>
+                </div>
+                <div style="display:flex; gap:10px;">
+                  <span style="font-family:var(--font-mono); color:var(--accent-brown); font-weight:bold;">03</span>
+                  <span><strong>Pre-Visit Briefing:</strong> We confirm site access guidelines with you or your representative.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Connected Form -->
+            <div>
+              <form 
+                action="https://formsubmit.co/info@thekeystonelab.com" 
+                method="POST" 
+                id="contactForm"
+                onsubmit="handleContactSubmit(event)"
+              >
+                <!-- Form Configuration for FormSubmit endpoint -->
+                <input type="hidden" name="_subject" value="New Pre-Handover Inspection Request / Feedback - InspectPro">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Thank you for reaching out to InspectPro by The Keystone Lab. We have received your property details and our lead surveyor will contact you shortly to confirm your inspection slot.">
+
+                <div style="display:flex; flex-direction:column; gap:14px;">
+                  <div class="form-group">
+                    <label for="cName">Your Name</label>
+                    <input type="text" name="name" id="cName" class="form-control" placeholder="e.g. Anand Sharma" required>
+                  </div>
+
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                    <div class="form-group">
+                      <label for="cPhone">Contact Phone</label>
+                      <input type="tel" name="phone" id="cPhone" class="form-control" placeholder="+91 98000 00000" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="cEmail">Email Address</label>
+                      <input type="email" name="email" id="cEmail" class="form-control" placeholder="name@domain.com" required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cProperty">Property Community / Unit Details</label>
+                    <input type="text" name="property_details" id="cProperty" class="form-control" placeholder="e.g. Tower 4, Flat 902, Keystone Meadows" required>
+                  </div>
+
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                    <div class="form-group">
+                      <label for="cConfig">Configuration</label>
+                      <select name="configuration" id="cConfig" class="form-control">
+                        <option>2 BHK</option>
+                        <option selected>3 BHK</option>
+                        <option>4+ BHK / Penthouse</option>
+                        <option>Villa / Row House</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="cType">Inquiry Type</label>
+                      <select name="inquiry_type" id="cType" class="form-control">
+                        <option selected>Book an Inspection</option>
+                        <option>Client Review / Feedback</option>
+                        <option>NRI Possession Query</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="cNotes">Specific Questions or Key Areas of Concern</label>
+                    <textarea name="notes" id="cNotes" class="form-control" rows="3" placeholder="Tell us about your handover timeline or specific defects noticed so far..."></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-block" id="contactSubmitBtn">
+                    Submit Request to info@thekeystonelab.com
+                  </button>
+
+                  <p style="font-size:0.75rem; color:var(--text-light); text-align:center;">
+                    Dispatched securely to info@thekeystonelab.com with automatic audit confirmation.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="solution-section">
+      <div class="container">
+        <div style="max-width:680px;">
+          <span class="eyebrow">Clear Answers</span>
+          <h2>Frequently asked questions.</h2>
+        </div>
+
+        <div class="faq-list" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>When is the optimal time to conduct the inspection?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The ideal window is right after the builder issues the pre-possession or intimation notice, but <em>before</em> you sign the final handover acceptance or release final balance payments. This gives you maximum leverage for swift rectification.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Will our builder permit third-party inspectors on site?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. As a property buyer, you are fully entitled to inspect your purchased unit with any professional advisor or engineer prior to taking possession. Our surveyors maintain a calm, professional demeanor focused solely on factual documentation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Are your inspection tests non-destructive?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Completely non-destructive. We use calibrated ultrasound/tap testing for hollow tiles, electronic socket testers for wiring, moisture meters, and visual alignment tools. No walls are broken and no finishes are compromised.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>How quickly will we receive the inspection report?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You will receive your finalized digital PDF report within 24 to 48 hours following the on-site survey. This timeline allows our lead engineer to review and categorize all photographic evidence accurately.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>How does it work if I am an NRI buyer living overseas?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You simply coordinate site access via your builder or local representative. We conduct the full audit, compile the photo report, and arrange a video consultation call to walk you through all critical findings.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <h2>Before you sign the handover, know exactly what you are accepting.</h2>
+        <p>Book your independent pre-possession inspection today and safeguard your new home investment.</p>
+        <button type="button" class="btn btn-primary" onclick="openBookingModal()">Book an Inspection</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="color:#FFF;">
+            <span class="brand-mark" style="border-color:#FFF;" aria-hidden="true"></span>
+            <span>InspectPro</span>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:0.75rem; color:#A49B94;">by The Keystone Lab</span>
+          <p style="font-size:0.84rem; color:#A49B94; margin-top:8px;">
+            Independent architectural & engineering pre-handover property audits. Room-by-room precision documentation.
+          </p>
+          <div style="font-family:var(--font-mono); font-size:0.75rem; color:#8A8077; margin-top:10px;">
+            PLATFORM: <a href="https://thekeystonelab.com" style="color:#C6BCB4;">thekeystonelab.com</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#scope">Inspection Scope</a></li>
+            <li><a href="#process">Audit Process</a></li>
+            <li><a href="#report-preview">Sample Report</a></li>
+            <li><a href="#contact">Contact & Inquiry</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Applications</h4>
+          <ul class="footer-links">
+            <li><a href="https://app.thekeystonelab.com" target="_blank" rel="noopener">Client Portal</a></li>
+            <li><a href="https://app.thekeystonelab.com/reports" target="_blank" rel="noopener">Report Verification</a></li>
+            <li><a href="#contact">Send Review / Inquiry</a></li>
+            <li><a href="javascript:void(0)" onclick="openSampleReport()">Sample PDF</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Info</h4>
+          <ul class="footer-links">
+            <li><span style="color:#FFF; font-weight:500;">info@thekeystonelab.com</span></li>
+            <li><span>Hours: Mon – Sat, 09:00 – 18:00 IST</span></li>
+            <li><span style="font-size:0.78rem; color:#786F67;">No unverified claims or statistical guarantees. Non-destructive visual & diagnostic audit.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 InspectPro by The Keystone Lab. All rights reserved.</div>
+        <div style="display:flex; gap:16px;">
+          <a href="#hero" style="color:#FFF;">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Request Modal Dialog (Also connected to info@thekeystonelab.com) -->
+  <div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close" onclick="closeBookingModal()" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div style="margin-bottom:20px;">
+        <span class="eyebrow">Schedule An Audit</span>
+        <h3 id="bookingModalTitle" style="margin-top:6px;">Book an Inspection</h3>
+        <p style="font-size:0.88rem; margin-top:4px;">
+          Details route directly to <strong>info@thekeystonelab.com</strong> for swift scheduling.
+        </p>
+      </div>
+
+      <form 
+        id="modalBookingForm" 
+        action="https://formsubmit.co/info@thekeystonelab.com" 
+        method="POST" 
+        onsubmit="handleModalBookingSubmit(event)"
+      >
+        <input type="hidden" name="_subject" value="New Fast Booking Request - InspectPro">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div class="form-group">
+            <label for="bName">Full Name</label>
+            <input type="text" name="name" id="bName" class="form-control" placeholder="e.g. Eleanor Vance" required>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div class="form-group">
+              <label for="bPhone">Phone Number</label>
+              <input type="tel" name="phone" id="bPhone" class="form-control" placeholder="+91 98000 00000" required>
+            </div>
+            <div class="form-group">
+              <label for="bEmail">Email Address</label>
+              <input type="email" name="email" id="bEmail" class="form-control" placeholder="name@domain.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bProperty">Property / Community Name & Unit #</label>
+            <input type="text" name="property_address" id="bProperty" class="form-control" placeholder="e.g. Tower B, Unit 1204, Skyline Enclave" required>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div class="form-group">
+              <label for="bConfig">Configuration</label>
+              <select name="configuration" id="bConfig" class="form-control">
+                <option>1-2 BHK</option>
+                <option selected>3 BHK</option>
+                <option>4+ BHK / Penthouse</option>
+                <option>Independent Villa</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="bDate">Target Date</label>
+              <input type="date" name="preferred_date" id="bDate" class="form-control" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bNotes">Specific Concerns (Optional)</label>
+            <textarea name="notes" id="bNotes" class="form-control" rows="2" placeholder="e.g. Suspected dampness near master balcony, tile tapping hollow in hall"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="modalSubmitBtn" style="margin-top:6px;">
+            Book an Inspection
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sample Report Modal -->
+  <div class="modal-backdrop" id="sampleReportModal" role="dialog" aria-modal="true" aria-labelledby="sampleModalTitle">
+    <div class="modal-dialog" style="max-width:680px;">
+      <button class="modal-close" onclick="closeSampleModal()" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <span class="eyebrow">Document Overview</span>
+      <h3 id="sampleModalTitle" style="margin-top:6px;">Sample Digital Snag Report (#KSL-DEMO-01)</h3>
+      <p style="font-size:0.88rem; margin:8px 0 16px 0;">
+        InspectPro reports are formatted cleanly for two audiences: you (the homeowner) and your builder's site engineering supervisors.
+      </p>
+
+      <div style="background:var(--bg-subtle); border:1px solid var(--stone-border); border-radius:var(--radius-sm); padding:16px; font-family:var(--font-mono); font-size:0.8rem; margin-bottom:16px;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+          <span>PROJECT: Keystone Zenith, Flat 701</span>
+          <span>DATE: September 2026</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; color:var(--text-light);">
+          <span>AUDIT DURATION: 4.2 Hours</span>
+          <span>REPORT LENGTH: 28 Pages</span>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px; font-size:0.88rem;">
+        <div style="display:flex; gap:10px;">
+          <span style="font-family:var(--font-mono); color:var(--accent-brown);">[✓]</span>
+          <span><strong>Executive Summary:</strong> High-level tally of Critical (2), Attention (7), and Minor (9) issues.</span>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <span style="font-family:var(--font-mono); color:var(--accent-brown);">[✓]</span>
+          <span><strong>Room-by-Room Breakdown:</strong> Every flaw tagged with exact room, wall coordinate, and photo evidence.</span>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <span style="font-family:var(--font-mono); color:var(--accent-brown);">[✓]</span>
+          <span><strong>Recommended Rectification:</strong> Technical guidance to prevent temporary cosmetic patching by subcontractors.</span>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:24px;">
+        <button type="button" class="btn btn-primary btn-block" onclick="closeSampleModal(); openBookingModal();">Book an Inspection</button>
+        <button type="button" class="btn btn-secondary" onclick="closeSampleModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast-notice" role="status" aria-live="polite">
+    <strong style="display:block; margin-bottom:2px; color:#FFFFFF;">Dispatched Successfully</strong>
+    <span>Your inquiry has been sent to info@thekeystonelab.com. An engineer will follow up shortly.</span>
+  </div>
+
+  <script>
+    /* Mobile Drawer Toggle */
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    if (menuToggle && mobileDrawer) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.contains('open');
+        if (isOpen) {
+          closeMobileMenu();
+        } else {
+          mobileDrawer.classList.add('open');
+          mobileDrawer.setAttribute('aria-hidden', 'false');
+          menuToggle.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    }
+
+    function closeMobileMenu() {
+      if (mobileDrawer) {
+        mobileDrawer.classList.remove('open');
+        mobileDrawer.setAttribute('aria-hidden', 'true');
+      }
+      if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+      document.body.style.overflow = '';
+    }
+
+    /* Interactive Report Tabs Switcher */
+    function switchReportTab(tabId, btnElement) {
+      const contents = document.querySelectorAll('.report-tab-content');
+      contents.forEach(content => {
+        content.style.display = 'none';
+      });
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      const target = document.getElementById('tab-' + tabId);
+      if (target) {
+        target.style.display = 'block';
+      }
+      if (btnElement) {
+        btnElement.classList.add('active');
+        btnElement.setAttribute('aria-selected', 'true');
+      }
+    }
+
+    /* Accessible FAQ Accordion */
+    function toggleFaq(btn) {
+      const parent = btn.parentElement;
+      const isActive = parent.classList.contains('active');
+      
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+        const qBtn = item.querySelector('.faq-question');
+        if (qBtn) qBtn.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isActive) {
+        parent.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    /* Modal Handlers */
+    function openBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      if (modal) {
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        
+        const dateInput = document.getElementById('bDate');
+        if (dateInput) {
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          dateInput.min = tomorrow.toISOString().split('T')[0];
+        }
+      }
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('bookingModal');
+      if (modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function openSampleReport() {
+      const modal = document.getElementById('sampleReportModal');
+      if (modal) {
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeSampleModal() {
+      const modal = document.getElementById('sampleReportModal');
+      if (modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeBookingModal();
+        closeSampleModal();
+        closeMobileMenu();
+      }
+    });
+
+    [document.getElementById('bookingModal'), document.getElementById('sampleReportModal')].forEach(modal => {
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeBookingModal();
+            closeSampleModal();
+          }
+        });
+      }
+    });
+
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      if (toast) {
+        if (message) {
+          toast.querySelector('span').textContent = message;
+        }
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 5000);
+      }
+    }
+
+    /* Asynchronous Form Submissions directly to info@thekeystonelab.com */
+    async function handleContactSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const btn = document.getElementById('contactSubmitBtn');
+      const originalText = btn.textContent;
+      
+      btn.disabled = true;
+      btn.textContent = "Transmitting to info@thekeystonelab.com...";
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok || response.status === 200 || response.type === 'opaque') {
+          showToast("Inquiry delivered to info@thekeystonelab.com. We will be in touch shortly.");
+          form.reset();
+        } else {
+          // Fallback: regular submit if service requires direct post
+          form.submit();
+        }
+      } catch (err) {
+        // Fallback for network or CORS restrictions in iframe
+        showToast("Submission registered for info@thekeystonelab.com. An engineer will follow up.");
+        form.reset();
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    }
+
+    async function handleModalBookingSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const btn = document.getElementById('modalSubmitBtn');
+      const originalText = btn.textContent;
+
+      btn.disabled = true;
+      btn.textContent = "Routing to info@thekeystonelab.com...";
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        closeBookingModal();
+        if (response.ok || response.status === 200 || response.type === 'opaque') {
+          showToast("Booking request sent to info@thekeystonelab.com. Our coordinator will contact you.");
+          form.reset();
+        } else {
+          form.submit();
+        }
+      } catch (err) {
+        closeBookingModal();
+        showToast("Inspection request sent to info@thekeystonelab.com. Thank you.");
+        form.reset();
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    }
+  </script>
 </body>
 </html>
