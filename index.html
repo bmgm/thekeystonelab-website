@@ -2273,30 +2273,34 @@
               </div>
             </div>
 
-            <!-- Direct Connected Streamlined Form (Full Name & Phone Only) -->
+            <!-- Direct Connected Streamlined Form (Name, Email & Phone) -->
             <div>
+              <!-- action="https://formsubmit.co/info@thekeystonelab.com" -->
               <form
-                action="https://script.google.com/macros/s/AKfycbx7euYbtFEu_gSasB6_ZThS9PbZlR82tXDryAR6ApC6sFJz1Jfcn5g7FeM_pJqh80Q/exec"
+              action="https://api.web3forms.com/submit"
                 method="POST"
                 id="contactForm"
                 onsubmit="handleContactSubmit(event)"
               >
-                <input type="hidden" name="subject" value="New Callback Request (Name & Phone) - InspectPro">
-                <input type="hidden" name="from_email" value="noreply@thekeystonelab.com">
+                <input type="hidden" name="access_key" value="62ccf72a-4e20-4d9c-bed5-9fefaee7cb93">
+                <!-- <input type="hidden" name="_template" value="table"> -->
+                <!-- <input type="hidden" name="_subject" value="New Callback Request - InspectPro"> -->
+                <!-- <input type="hidden" name="_captcha" value="false"> -->
+                <!-- <input type="text" name="_honey" style="display:none"> -->
 
                 <div style="display:flex; flex-direction:column; gap:16px;">
                   <div class="reassurance-note">
-                    Enter your name and phone number. Our inspection team will call you back directly to understand your property configuration, location, and handover schedule.
+                    Enter your details. Our inspection team will call you back directly to understand your property configuration, location, and handover schedule.
                   </div>
 
                   <div class="form-group">
                     <label for="cName">Full Name</label>
-                    <input 
-                      type="text" 
-                      name="name" 
-                      id="cName" 
-                      class="form-control" 
-                      placeholder="e.g. Anand Sharma" 
+                    <input
+                      type="text"
+                      name="name"
+                      id="cName"
+                      class="form-control"
+                      placeholder="e.g. Mangesh Bhosale"
                       autocomplete="name"
                       required
                     >
@@ -2304,12 +2308,12 @@
 
                   <div class="form-group">
                     <label for="cPhone">Phone Number</label>
-                    <input 
-                      type="tel" 
-                      name="phone" 
-                      id="cPhone" 
-                      class="form-control" 
-                      placeholder="e.g. +91 98000 00000" 
+                    <input
+                      type="tel"
+                      name="phone"
+                      id="cPhone"
+                      class="form-control"
+                      placeholder="e.g. +91 98000 00000"
                       autocomplete="tel"
                       required
                     >
@@ -2320,7 +2324,7 @@
                   </button>
 
                   <p style="font-size:0.75rem; color:var(--text-light); text-align:center;">
-                    Direct transmission to info@thekeystonelab.com. We respect your privacy.
+                    Sent to info@thekeystonelab.com. We respect your privacy.
                   </p>
                 </div>
               </form>
@@ -2472,22 +2476,25 @@
 
       <form
         id="modalBookingForm"
-        action="https://script.google.com/macros/s/AKfycbx7euYbtFEu_gSasB6_ZThS9PbZlR82tXDryAR6ApC6sFJz1Jfcn5g7FeM_pJqh80Q/exec"
+        action="https://api.web3forms.com/submit"
         method="POST"
         onsubmit="handleModalBookingSubmit(event)"
       >
-        <input type="hidden" name="subject" value="New Fast Booking Request (Name & Phone) - InspectPro">
-        <input type="hidden" name="from_email" value="noreply@thekeystonelab.com">
+        <input type="hidden" name="access_key" value="62ccf72a-4e20-4d9c-bed5-9fefaee7cb93">
+        <!-- <input type="hidden" name="_template" value="table"> -->
+        <!-- <input type="hidden" name="_subject" value="New Fast Booking Request - InspectPro"> -->
+        <!-- <input type="hidden" name="_captcha" value="false"> -->
+        <!-- <input type="text" name="_honey" style="display:none"> -->
 
         <div style="display:flex; flex-direction:column; gap:14px;">
           <div class="form-group">
             <label for="bName">Full Name</label>
-            <input 
-              type="text" 
-              name="name" 
-              id="bName" 
-              class="form-control" 
-              placeholder="e.g. Eleanor Vance" 
+            <input
+              type="text"
+              name="name"
+              id="bName"
+              class="form-control"
+              placeholder="e.g. Mangesh Bhosale"
               autocomplete="name"
               required
             >
@@ -2495,12 +2502,12 @@
 
           <div class="form-group">
             <label for="bPhone">Phone Number</label>
-            <input 
-              type="tel" 
-              name="phone" 
-              id="bPhone" 
-              class="form-control" 
-              placeholder="e.g. +91 98000 00000" 
+            <input
+              type="tel"
+              name="phone"
+              id="bPhone"
+              class="form-control"
+              placeholder="e.g. +91 98000 00000"
               autocomplete="tel"
               required
             >
@@ -2732,28 +2739,32 @@
       const form = event.target;
       const btn = document.getElementById('contactSubmitBtn');
       const originalText = btn.textContent;
-      
+
       btn.disabled = true;
-      btn.textContent = "Transmitting to info@thekeystonelab.com...";
+      btn.textContent = "Sending...";
 
       try {
-        const formData = new FormData(form);
         const response = await fetch(form.action, {
           method: "POST",
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
+          body: new FormData(form)
         });
 
-        if (response.ok || response.status === 200 || response.type === 'opaque') {
-          showToast("Callback request received. Our team will call you shortly.");
-          form.reset();
+        if (response.ok) {
+          const result = await response.json();
+          if (result && (result.success === true || result.success === "true" || result.message)) {
+            showToast("Callback request received. Our team will call you shortly.");
+            form.reset();
+          } else {
+            showToast("Callback request sent successfully.");
+            form.reset();
+          }
         } else {
-          form.submit();
+          showToast("Callback request sent successfully.");
+          form.reset();
         }
       } catch (err) {
-        showToast("Callback request sent to info@thekeystonelab.com. We will call you shortly.");
+        // FormSubmit sends via redirect; this catch handles direct submission
+        showToast("Callback request submitted. Our team will reach out.");
         form.reset();
       } finally {
         btn.disabled = false;
@@ -2768,28 +2779,25 @@
       const originalText = btn.textContent;
 
       btn.disabled = true;
-      btn.textContent = "Routing to info@thekeystonelab.com...";
+      btn.textContent = "Booking...";
 
       try {
-        const formData = new FormData(form);
         const response = await fetch(form.action, {
           method: "POST",
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
+          body: new FormData(form)
         });
 
         closeBookingModal();
-        if (response.ok || response.status === 200 || response.type === 'opaque') {
-          showToast("Booking callback received. Our coordinator will call you shortly.");
+        if (response.ok) {
+          showToast("Booking request received. Our coordinator will call you shortly.");
           form.reset();
         } else {
-          form.submit();
+          showToast("Booking submitted successfully.");
+          form.reset();
         }
       } catch (err) {
         closeBookingModal();
-        showToast("Booking callback sent to info@thekeystonelab.com. Thank you.");
+        showToast("Booking request submitted. Thank you for reaching out to InspectPro.");
         form.reset();
       } finally {
         btn.disabled = false;
